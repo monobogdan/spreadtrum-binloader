@@ -1,0 +1,19 @@
+OUTPUT_FORMAT("elf32-bigarm")
+SECTIONS
+{
+	. = 0x0;
+	.text : {
+		*(.main*)
+		*(.text*)
+		*(.rodata*)
+		*(.data)
+		*(.bss)
+	}
+	
+	/DISCARD/ : {
+		*(.ARM.*)
+		*(.comment*)
+		
+	}
+	
+}

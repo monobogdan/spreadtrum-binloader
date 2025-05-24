@@ -1,0 +1,19 @@
+OUTPUT_FORMAT("elf32-bigarm")
+SECTIONS
+{
+	INCLUDE origin.ld
+	.text : {
+		*(.text*)
+		*(.helper*)
+		*(.rodata*)
+		*(.data)
+		*(.bss)
+	}
+	
+	/DISCARD/ : {
+		*(.ARM.*)
+		*(.comment*)
+		
+	}
+	
+}
