@@ -6,8 +6,8 @@ SECTIONS
 		*(.main*)
 		*(.text*)
 		*(.rodata*)
-		*(.data)
-		*(.bss)
+		*(.data*)
+		*(.bss*)
 	}
 	
 	/DISCARD/ : {

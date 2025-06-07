@@ -13,6 +13,9 @@
 #ifndef API_H
 #define API_H
 
+#define LCD_WIDTH 240
+#define LCD_HEIGHT 320
+
 #define FILE_READ 0x33
 #define FILE_WRITE 0x32
 #define FILE_CREATE 0x22
@@ -22,6 +25,9 @@
 #define uint8 unsigned char
 #define byte unsigned char
 #define wchar_t unsigned short
+
+#define true 1
+#define false 0
 
 #include "function_table.h"
 
@@ -64,6 +70,12 @@ typedef struct {
 typedef struct {
 	uint32 x, y, w, h;
 } Rect;
+
+typedef struct {
+	uint32 width;
+	uint32 height;
+	short* pixels;
+} Bitmap;
 
 #ifndef LOADER
 #define __api_table context->FunctionTable
